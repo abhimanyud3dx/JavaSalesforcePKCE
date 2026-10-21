@@ -6,7 +6,7 @@ Dependency-free Java 17 command-line apps that sign a user into Salesforce using
 
 ## Salesforce org setup
 
-1. In **Setup > App Manager**, create a **New Connected App**.
+1. In **Setup > App Manager**, create a **New Connected App** or **External Client App**.
 2. Enable **OAuth Settings** and set the callback URL to exactly:
    `https://localhost:3000/atlas/callback`
 3. Add the **Manage user data via APIs (api)** OAuth scope. The app does not request a refresh token.
