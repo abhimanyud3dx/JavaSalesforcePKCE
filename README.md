@@ -41,6 +41,13 @@ $env:SALESFORCE_KEYSTORE_PASSWORD = "YOUR_LOCAL_KEYSTORE_PASSWORD"
 
 Keep the keystore and certificate private to your development machine; do not commit them.
 
+If the keystore password is inaccessible, run the following command
+
+```powershell
+$secure = Read-Host "Enter the password used when creating the .p12 keystore" -AsSecureString
+$env:SALESFORCE_KEYSTORE_PASSWORD = [System.Net.NetworkCredential]::new("", $secure).Password
+```
+
 If your Connected App requires a client secret for the web server flow, set it in the same terminal before launching the app:
 
 ```powershell
